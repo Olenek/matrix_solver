@@ -149,9 +149,8 @@ public:
 
     void getSolutions() {
         this->to_rref();
-        int cur_x = 0;
         for (std::pair<int, int> p : this->get_pivots()) {
-            std::cout << "x[" << p.second << "] = " << matrix[cur_x][cols - 1];
+            std::cout << "x[" << p.second << "] = " << matrix[p.first][cols - 1];
             bool is_pivot = true;
             for (int j = 0; j < cols - 1; j++) {
                 if (matrix[p.first][j] == 1 && is_pivot) is_pivot = false;
